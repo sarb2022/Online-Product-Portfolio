@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <p>Products currently available : </p>
+    <form action="/buy" method="post">
+        <div class="form-group">
+            <select class="form-control" name="product">
+                <option disabled="" selected="" value="">Product</option>
+                    {% for product in products %}
+                    <option value="{{ product.product }}" >{{ product.product }}      |   &#8377; {{ product.price }}</option>
+                    {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" name="qty" placeholder="Quantity" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+{% endblock %}

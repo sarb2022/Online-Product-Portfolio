@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Wallet
+{% endblock %}
+
+{% block main %}
+
+    <p>
+        Current Cash in Wallet : INR {{ cash }} <br>
+        To add money in wallet, please enter the amount :
+    </p>
+    <form action="/wallet" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="amount" placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+{% endblock %}
